@@ -22,7 +22,7 @@ metadata:
     machineconfiguration.openshift.io/role: worker
   name: ima-rhcos
 spec:
-  osImageURL:  hypervisorepo:5000/<image_name>:latest 
+  osImageURL: <registry>:<port>/<image_name>:latest 
 ```
 ### Fedora CoreOS
 Run command: 
@@ -33,7 +33,7 @@ Where kernel version is the version used in the coreOS image, and git token is a
 
 To rebase the rpm-ostree: 
 
-`sudo rpm-ostree rebase --experimental ostree-unverified-registry:100.64.0.255:5000/<image_name> --bypass-driver`
+`sudo rpm-ostree rebase --experimental ostree-unverified-registry:<registry>:<port>/<image_name> --bypass-driver`
 
 `systemctl reboot`
 
